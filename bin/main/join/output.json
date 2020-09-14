@@ -1,0 +1,20 @@
+{
+    "Employee": [
+        {
+            "id": "emp#1",
+            "firstName": "Jose",
+            "lasttName": "Perez",
+            "ssn": "ssn1",
+            "department": "Instituto nacional de investigaciones nucleares (ININ)",
+            "division": "Research"
+        },
+        {
+            "id": "emp#2",
+            "firstName": "Antonio",
+            "lasttName": "Ramirez",
+            "ssn": "ssn2",
+            "department": "Instituto Mexicano de Seguro Social (IMSS)",
+            "division": "Healthcare"
+        }
+    ]
+}

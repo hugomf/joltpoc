@@ -1,0 +1,103 @@
+{
+  "GdsIss": {
+    "ShpgPtCd": "1076",
+    "TrckgId": "12234556",
+    "MstrBOLNbr": "BOL123455",
+    "GdsIssAddrDtl": [
+      {
+        "AddrNm": "Texas",
+        "PstlCd": "9001",
+        "AddrFuncCd": "ZO",
+        "ProvStCd": "WO"
+      },
+      {
+        "AddrNm": "Portland",
+        "PstlCd": "9002",
+        "AddrFuncCd": "ZI",
+        "ProvStCd": "WO"
+      },
+      {
+        "AddrNm": "Seattle",
+        "PstlCd": "9003",
+        "AddrFuncCd": "ZO",
+        "ProvStCd": "WI"
+      }
+    ],
+    "GdsIssPackDtl": [
+      {
+        "CrtnLen": 12,
+        "CrtnWdth": 14,
+        "CrtnNbr": "145678",
+        "ItmDlvryDtl": [
+          {
+            "MatlItmTypeCd": "CD",
+            "DlvryItmNbr": "12899",
+            "DlvryNoteNbr": "111111",
+            "BaseUOMCd": "23"
+          },
+          {
+            "MatlItmTypeCd": "DE",
+            "DlvryItmNbr": "12898",
+            "DlvryNoteNbr": "222222",
+            "BaseUOMCd": "24"
+          },
+          {
+            "MatlItmTypeCd": "EF",
+            "DlvryItmNbr": "12897",
+            "DlvryNoteNbr": "333333",
+            "BaseUOMCd": "25"
+          }
+        ]
+      },
+      {
+        "CrtnLen": 13,
+        "CrtnWdth": 15,
+        "CrtnNbr": "123456",
+        "CrtnDimUOMCd": "777777",
+        "ItmDlvryDtl": [
+          {
+            "MatlItmTypeCd": "GH",
+            "DlvryItmNbr": "12899",
+            "DlvryNoteNbr": "555555",
+            "BaseUOMCd": "23"
+          },
+          {
+            "MatlItmTypeCd": "HI",
+            "DlvryItmNbr": "12868",
+            "DlvryNoteNbr": "222222",
+            "BaseUOMCd": "24"
+          },
+          {
+            "MatlItmTypeCd": "IJ",
+            "DlvryItmNbr": "12897",
+            "DlvryNoteNbr": "333333",
+            "BaseUOMCd": "25"
+          }
+        ]
+      }
+    ],
+    "TrnsprtnPlngDt": [
+      {
+        "ActualEndDt": "04022020",
+        "PlndEndDt": "04022020",
+        "StartDt": "03022020",
+        "DlvryItmNbr": "12899",
+        "DlvryNoteNbr": "111111"
+      },
+      {
+        "ActualEndDt": "03052020",
+        "PlndEndDt": "03062020",
+        "StartDt": "03022020",
+        "DlvryItmNbr": "12898",
+        "DlvryNoteNbr": "222222"
+      },
+      {
+        "ActualEndDt": "09022020",
+        "PlndEndDt": "09022020",
+        "StartDt": "09022020",
+        "DlvryItmNbr": "17789",
+        "DlvryNoteNbr": "777777"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+<XMLBundle GeneratedBy='TA'>
+    <XMLTransmission Sender='NIKETRADE' Receiver='NKE' Timestamp='20200330 000112' CtrlNumber='130994198438' SourceOwner='SAPPRD300'>
+        <XMLGroup CtrlNumber='130994198438' GroupType='BP' IncludedMessages='1'>
+            <XMLTransaction CtrlNumber='123996653395' TransactionType='BPM-BST'>
+                <BpMessage MessageType='BST'>
+                    <Mode>VL</Mode>
+                    <Reference RefTypeCd='CN' SourceRefTypeCd='128'>TCNU5991593</Reference>
+                    <Reference RefTypeCd='S2' SourceRefTypeCd='128'>SAPPRD300</Reference>
+                    <Reference RefTypeCd='BM' SourceRefTypeCd='128'>ONEYJKTA19874400</Reference>
+                    <Reference RefTypeCd='USNM' SourceRefTypeCd='128'>AL MURAYKH</Reference>
+                    <Reference RefTypeCd='V3' SourceRefTypeCd='128'>011W</Reference>
+                    <Reference RefTypeCd='VC' SourceRefTypeCd='128'>9463279</Reference>
+                    <Reference RefTypeCd='BN' SourceRefTypeCd='128'>JKTA19874400</Reference>
+                    <Reference RefTypeCd='VC' SourceRefTypeCd='128'>9708863</Reference>
+                    <Reference RefTypeCd='V3' SourceRefTypeCd='128'>0011</Reference>
+                    <Reference RefTypeCd='4C' SourceRefTypeCd='128'>GB</Reference>
+                    <TradePartner RoleCd='CA'>
+                        <TradePartnerID Qualifier='93'>ONEY</TradePartnerID>
+                    </TradePartner>
+                    <TradePartner RoleCd='CB'>
+                        <TradePartnerID Qualifier='93'>DMCQ</TradePartnerID>
+                    </TradePartner>
+                    <TradePartner RoleCd='ST'>
+                        <TradePartnerID Qualifier='93'>0000346282</TradePartnerID>
+                    </TradePartner>
+                    <Status>
+                        <Date DateTypeCd='AG' TimeZone='UTC'>20200330 203000</Date>
+                        <Location>
+                            <Place>
+                                <City>ROCHDALE</City>
+                                <StateProvinceCd>GM</StateProvinceCd>
+                                <CountryCd>GB</CountryCd>
+                            </Place>
+                            <LocationID Qualifier='UN'>GBROL</LocationID>
+                        </Location>
+                    </Status>
+                    <Document DocType='SHIP' Key='123996653395' AltKey='123996653395'>
+                        <DocumentID>0398498788</DocumentID>
+                    </Document>
+                    <Equipment Key='122820586388' AltKey='122820586388'>
+                        <EquipmentNumber>TCNU5991593</EquipmentNumber>
+                        <Reference RefTypeCd='SN' SourceRefTypeCd='128'>ID 423311A</Reference>
+                    </Equipment>
+                </BpMessage>
+            </XMLTransaction>
+        </XMLGroup>
+    </XMLTransmission>
+</XMLBundle>

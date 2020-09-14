@@ -1,0 +1,57 @@
+[
+    // first pivot the employees array by employeeCode 
+    //  so that later employees by id/code can be "looked up"
+    {
+      "operation": "shift",
+      "spec": {
+        "employees": {
+          "*": { // array index
+            "employeeCode": {
+              "*": { // match/capture the value of employeeCode
+                "@2": "employeesByCode.&1"
+              }
+            }
+          }
+        },
+        "relationships": "relationships" // pass thru
+      }
+    },
+    // loop over the relationships, and lookup employeesByCode
+    {
+      "operation": "shift",
+      "spec": {
+        "relationships": {
+          "*": { // array index
+            "mentorEmployeeCode": {
+              "*": { // match/capture the value of mentorEmployeeCode
+                "@(4,employeesByCode.&)": "matchedEmployees[&3].mentor"
+              }
+            },
+            "menteeEmployeeCode": {
+              "*": {
+                "@(4,employeesByCode.&)": "matchedEmployees[&3].mentee"
+              }
+            }
+          }
+        }
+      }
+    },
+    // the easy part, just cleanup the structure / names
+    {
+      "operation": "shift",
+      "spec": {
+        "matchedEmployees": {
+          "*": { // array
+            "mentor": {
+              "employeeCode": "matchedEmployees[&2].mentorEmployeeCode",
+              "firstName": "matchedEmployees[&2].mentorFirstName"
+            },
+            "mentee": {
+              "employeeCode": "matchedEmployees[&2].meneeEmployeeCode",
+              "firstName": "matchedEmployees[&2].menteeFirstName"
+            }
+          }
+        }
+      }
+    }
+  ]

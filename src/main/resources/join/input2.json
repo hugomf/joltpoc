@@ -1,0 +1,20 @@
+{
+    "employees": [
+      {
+        "employeeCode": 1,
+        "firstName": "Krish",
+        "lastName": "Advani"
+      },
+      {
+        "employeeCode": 2,
+        "firstName": "Neha",
+        "lastName": "Advani"
+      }
+    ],
+    "relationships": [
+      {
+        "mentorEmployeeCode": 1,
+        "menteeEmployeeCode": 2
+      }
+    ]
+  }

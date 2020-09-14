@@ -1,0 +1,33 @@
+[
+    {
+        "operation": "shift",
+        "spec": {
+            "Department": {
+                "*": {
+                    "@" : "Department.@id"
+                }
+            },
+            "Employee" : "Employee"
+        }
+
+    },
+    {
+        "operation": "shift",
+        "spec": {
+            "Employee": {
+                "*": {
+                    "depId" : {
+                        "*" : {
+                            "@2" : {
+                                "Department" : {
+                                    "&4" : "test"
+                                }    
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+]

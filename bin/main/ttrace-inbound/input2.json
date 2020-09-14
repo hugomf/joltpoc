@@ -1,0 +1,134 @@
+{
+    "XMLBundle": {
+        "GeneratedBy": "TA",
+        "XMLTransmission": {
+            "Sender": "NIKETRADE",
+            "Receiver": "NKE",
+            "Timestamp": "20200330 000112",
+            "CtrlNumber": "130994198438",
+            "SourceOwner": "SAPPRD300",
+            "XMLGroup": {
+                "CtrlNumber": "130994198438",
+                "GroupType": "BP",
+                "IncludedMessages": "1",
+                "XMLTransaction": {
+                    "CtrlNumber": "123996653395",
+                    "TransactionType": "BPM-BST",
+                    "BpMessage": {
+                        "MessageType": "BST",
+                        "Mode": "VL",
+                        "Reference": [
+                            {
+                                "RefTypeCd": "CN",
+                                "SourceRefTypeCd": "128",
+                                "text": "TCNU5991593"
+                            },
+                            {
+                                "RefTypeCd": "S2",
+                                "SourceRefTypeCd": "128",
+                                "text": "SAPPRD300"
+                            },
+                            {
+                                "RefTypeCd": "BM",
+                                "SourceRefTypeCd": "128",
+                                "text": "ONEYJKTA19874400"
+                            },
+                            {
+                                "RefTypeCd": "USNM",
+                                "SourceRefTypeCd": "128",
+                                "text": "AL MURAYKH"
+                            },
+                            {
+                                "RefTypeCd": "V3",
+                                "SourceRefTypeCd": "128",
+                                "text": "011W"
+                            },
+                            {
+                                "RefTypeCd": "VC",
+                                "SourceRefTypeCd": "128",
+                                "text": "9463279"
+                            },
+                            {
+                                "RefTypeCd": "BN",
+                                "SourceRefTypeCd": "128",
+                                "text": "JKTA19874400"
+                            },
+                            {
+                                "RefTypeCd": "VC",
+                                "SourceRefTypeCd": "128",
+                                "text": "9708863"
+                            },
+                            {
+                                "RefTypeCd": "V3",
+                                "SourceRefTypeCd": "128",
+                                "text": "0011"
+                            },
+                            {
+                                "RefTypeCd": "4C",
+                                "SourceRefTypeCd": "128",
+                                "text": "GB"
+                            }
+                        ],
+                        "TradePartner": [
+                            {
+                                "RoleCd": "CA",
+                                "TradePartnerID": {
+                                    "Qualifier": "93",
+                                    "text": "ONEY"
+                                }
+                            },
+                            {
+                                "RoleCd": "CB",
+                                "TradePartnerID": {
+                                    "Qualifier": "93",
+                                    "text": "DMCQ"
+                                }
+                            },
+                            {
+                                "RoleCd": "ST",
+                                "TradePartnerID": {
+                                    "Qualifier": "93",
+                                    "text": "0000346282"
+                                }
+                            }
+                        ],
+                        "Status": {
+                            "Date": {
+                                "DateTypeCd": "AG",
+                                "TimeZone": "UTC",
+                                "text": "20200330 203000"
+                            },
+                            "Location": {
+                                "Place": {
+                                    "City": "ROCHDALE",
+                                    "StateProvinceCd": "GM",
+                                    "CountryCd": "GB"
+                                },
+                                "LocationID": {
+                                    "Qualifier": "UN",
+                                    "text": "GBROL"
+                                }
+                            }
+                        },
+                        "Document": {
+                            "DocType": "SHIP",
+                            "Key": "123996653395",
+                            "AltKey": "123996653395",
+                            "DocumentID": "0398498788"
+                        },
+                        "Equipment": {
+                            "Key": "122820586388",
+                            "AltKey": "122820586388",
+                            "EquipmentNumber": "TCNU5991593",
+                            "Reference": {
+                                "RefTypeCd": "SN",
+                                "SourceRefTypeCd": "128",
+                                "text": "ID 423311A"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

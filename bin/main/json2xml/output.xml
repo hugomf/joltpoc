@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<XMLBundle>
+    <XMLTransmission>
+        <Sender>NIKE</Sender>
+        <SourceOwner>SAPPRD300</SourceOwner>
+        <Receiver>NKETRADE</Receiver>
+        <CtrlNumber>20200330000134.2825200TRKTRC04</CtrlNumber>
+        <Timestamp>20200329 170134</Timestamp>
+        <XMLGroup>
+            <GroupType>BP</GroupType>
+            <XMLTransaction>
+                <TransactionType>BPM-BST</TransactionType>
+                <BpMessage>
+                    <Status>
+                        <Date>
+                            <TimeZone>UTC</TimeZone>
+                            <null>20200410 220000
+                            <DateTypeCd>X2</DateTypeCd>
+                        </Date>
+                    </Status>
+                    <Equipment>
+                        <Reference>
+                            <null>FJ07971405
+                            <SourceRefTypeCd>128</SourceRefTypeCd>
+                            <RefTypeCd>SN</RefTypeCd>
+                        </Reference>
+                        <EquipmentNumber>MSCU5854992</EquipmentNumber>
+                        <Key>MSCU5854992</Key>
+                    </Equipment>
+                    <Reference>
+                        <null>SHP98231
+                        <SourceRefTypeCd>128</SourceRefTypeCd>
+                        <RefTypeCd>4C</RefTypeCd>
+                    </Reference>
+                    <Reference>
+                        <null>MSCU5854992
+                        <SourceRefTypeCd>128</SourceRefTypeCd>
+                        <RefTypeCd>CN</RefTypeCd>
+                    </Reference>
+                    <Reference>
+                        <null>MEDUAL455824
+                        <SourceRefTypeCd>128</SourceRefTypeCd>
+                        <RefTypeCd>BM</RefTypeCd>
+                    </Reference>
+                    <Reference>
+                        <null>WHATEVER
+                        <SourceRefTypeCd>128</SourceRefTypeCd>
+                        <RefTypeCd>CA</RefTypeCd>
+                    </Reference>
+                    <Reference>
+                        <null>SEALNBM3182
+                        <SourceRefTypeCd>128</SourceRefTypeCd>
+                        <RefTypeCd>SN</RefTypeCd>
+                    </Reference>
+                    <parametro>None</parametro>
+                    <Mode>VL</Mode>
+                    <TradePartner>
+                        <TradePartnerID>MSCU</TradePartnerID>
+                        <RoleCd>CA</RoleCd>
+                        <TradePartnerName>MSC MEDITERRANEAN SHIPPING COMPANY INC</TradePartnerName>
+                    </TradePartner>
+                    <Document>
+                        <AltKey>130973538754</AltKey>
+                        <DocumentID>0401303607</DocumentID>
+                        <DocType>SHIP</DocType>
+                        <Key>0401303607</Key>
+                    </Document>
+                    <MessageType>BST</MessageType>
+                </BpMessage>
+                <CtrlNumber>20200330000134333333111111</CtrlNumber>
+            </XMLTransaction>
+            <CtrlNumber>001</CtrlNumber>
+            <IncludedMessages>1</IncludedMessages>
+        </XMLGroup>
+    </XMLTransmission>
+    <GeneratedBy>NKE</GeneratedBy>
+</XMLBundle>
