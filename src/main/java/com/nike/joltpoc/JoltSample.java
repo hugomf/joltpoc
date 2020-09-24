@@ -18,8 +18,8 @@ public class JoltSample {
         // final List<Object> specs = JsonUtils.classpathToList("/ttrace-outbound/spec.json");
         // final Object inputJSON = JsonUtils.classpathToObject("/ttrace-outbound/input.json");
 
-        final List<Object> specs = JsonUtils.classpathToList("/goodsissue/spec.json");
-        final Object inputJSON = JsonUtils.classpathToObject("/goodsissue/input.json");
+        final List<Object> specs = JsonUtils.classpathToList("/ttrace-inbound/spec.json");
+        final Object inputJSON = JsonUtils.classpathToObject("/ttrace-inbound/input.json");
 
 
         final Chainr chainr = Chainr.fromSpec(specs);

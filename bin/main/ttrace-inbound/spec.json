@@ -1,0 +1,206 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "XMLBundle": {
+        "XMLTransmission": {
+          "SourceOwner": "eventControl.sourceSystemName",
+          "Timestamp": {
+            "* *": {
+              "$(0,1)": "eventControl.recordOnCreateDate",
+              "$(0,2)": "eventControl.recordOnCreateTime"
+            }
+
+          },
+          "XMLGroup": {
+            "XMLTransaction": {
+              "CtrlNumber": "eventControl.messageIdentifier",
+              "BpMessage": {
+                "Reference": {
+                  "*": {
+                    "RefTypeCd": {
+                      "4C": {
+                        "@(2,text)": "eventControl.finalDestinationCountryCd"
+                      },
+                      "BM": {
+                        "@(2,text)": "ShipmentTrackTrace.billOfLadingNbr"
+                      },
+                      "CN": {
+                        "@(2,text)": "ShipmentTrackTrace.hawbContainerProNbr"
+                      },
+                      "ST": {
+                        "@(2,text)": "ShipmentTrackTrace.shipToCustomerNbr"
+                      },
+                      "V3" : {
+                        "@(2,text)": "ShipmentTrackTrace.voyageFlightNumber"
+                      },
+                      "VS": {
+                        "@(2,text)": "ShipmentTrackTrace.vesselCode"
+                      },
+                      "ABS": {
+                        "@(2,text)": "ShipmentTrackTrace.vesselName"
+                      },
+                      "AW": {
+                        "@(2,text)": "ShipmentTrackTrace.houseAirWaybill"
+                      },
+                      "MB": {
+                        "@(2,text)": "ShipmentTrackTrace.masterWaybill"
+                      },
+                      "KK": {
+                        "@(2,text)": "ShipmentTrackTrace.deliveryReferenceNumber"
+                      },
+                      "LU": {
+                        "@(2,text)": "ShipmentTrackTrace.locationNumber"
+                      },   
+                      "8N": {
+                        "@(2,text)": "ShipmentTrackTrace.receivingCompany"
+                      },   
+                      "4B": {
+                        "@(2,text)": "ShipmentTrackTrace.shipmentOriginCountryCode"
+                      },   
+                      "LO": {
+                        "@(2,text)": "ShipmentTrackTrace.deconsolidationLoadNumber"
+                      },
+                      "PLN": {
+                        "@(2,text)": "ShipmentTrackTrace.deconsolidationPalletCount"
+                      }
+                    }
+                  }
+                },
+                "Document": {
+                  "DocumentID": "ShipmentTrackTrace.shipmentNbr"
+                },
+                "Place" : {
+                    "Qualifier" : {
+                      "UN" : "ShipmentPortDetail.portLocationTypeCode"
+                    },
+                    "LocationID" : "ShipmentPortDetail.portLocationCode",
+                    "City" : "ShipmentPortDetail.portCityCode",
+                    "StateProvinceCd" : "ShipmentPortDetail.portStateProvinceCode",
+                    "CountryCd" : "ShipmentPortDetail.portCountryCode"
+                },
+                "Mode": {
+                  "VL|O": {
+                    "$": "ShipmentTrackTrace.shippingTypeCd",
+                    "@(2,Status)": {
+                      "StatusReasonCd" : "ShipmentTrackTraceEvent.eventReasonCd",
+                      "Date": {
+                        "DateTypeCd": {
+                          "X4": {
+                            "#VA": "ShipmentTrackTraceEvent.eventTypeCd"
+                          },
+                          "X2": {
+                            "#AD": "ShipmentTrackTraceEvent.eventTypeCd"
+                          },
+                          "D1": {
+                            "#D": "ShipmentTrackTraceEvent.eventTypeCd"
+                          },
+                          "*": {
+                            "$": "ShipmentTrackTraceEvent.eventTypeCd"
+                          }
+                        },
+                        "TimeZone" : "ShipmentTrackTraceEvent.eventTypeTimezoneCd",
+                        "text": {
+                          "* *": {
+                            "$(0,1)": "ShipmentTrackTraceEvent.eventTypeDt",
+                            "$(0,2)": "ShipmentTrackTraceEvent.eventTypeTm"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "Equipment": {
+                  "EquipmentNumber": "ShipmentTrackTrace.containerNbr"
+                },
+                "TradePartner": {
+                  "*" : {
+                    "RoleCd": {
+                      "CA" : {
+                        "@(2,RoleCd)" : ["ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode", "ShipmentAddress[&3].addressFunctionCd"], 
+                        "#Carrier" : "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
+                        "@(2,TradePartnerID)" : {
+                           "@(0,text)" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
+                        }
+                      },
+                      "FW" : {
+                        "@(2,RoleCd)" : ["ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode", "ShipmentAddress[&3].addressFunctionCd"], 
+                        "#Air Freight Forwarder" : "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
+                        "@(2,TradePartnerID)" : {
+                           "@(0,text)" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
+                        }
+                      },
+                      "CB" : {
+                        "@(2,RoleCd)" : ["ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode", "ShipmentAddress[&3].addressFunctionCd"], 
+                        "#Customs Broker" : "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
+                        "@(2,TradePartnerID)" : {
+                           "@(0,text)" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
+                        }
+                      },
+                      "CS" : {
+                        "@(2,RoleCd)" : ["ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode", "ShipmentAddress[&3].addressFunctionCd"], 
+                        "#MCC Consolidator" : "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
+                        "@(2,TradePartnerID)" : {
+                           "@(0,text)" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
+                        }
+                      },
+                      "DS" : {
+                        "@(2,RoleCd)" : ["ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode", "ShipmentAddress[&3].addressFunctionCd"], 
+                        "#Deconsolidator" : "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
+                        "@(2,TradePartnerID)" : {
+                           "@(0,text)" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }  
+    }
+  },
+
+  {
+    "operation": "modify-overwrite-beta",
+    "spec": {
+      "eventControl": {
+          "rct_year" : "=substring(@(1,recordOnCreateDate),0,4)",
+          "rct_month" : "=substring(@(1,recordOnCreateDate),4,6)",
+          "rct_day" : "=substring(@(1,recordOnCreateDate),6,8)",
+          "recordOnCreateDate": "=concat(@(1,rct_year), '-', @(1,rct_month), '-', @(1,rct_day))"
+      },
+      "ShipmentTrackTraceEvent" : {
+        "evt_year" : "=substring(@(1,eventTypeDt),0,4)",
+        "evt_month" : "=substring(@(1,eventTypeDt),4,6)",
+        "evt_day" : "=substring(@(1,eventTypeDt),6,8)",
+        "eventTypeDt": "=concat(@(1,evt_year), '-', @(1,evt_month), '-', @(1,evt_day))"
+      }
+    }
+  },
+
+  {
+    "operation": "modify-default-beta",
+    "spec": {
+      "ShipmentTrackTraceEvent" : {
+        "eventTypeTimezoneCd" : "LT"
+      }
+    }
+  },
+  {
+    "operation": "remove",
+    "spec": {
+      "eventControl": {
+        "rct_year" : "",
+        "rct_month" : "",
+        "rct_day" : ""
+      },
+      "ShipmentTrackTraceEvent" : {
+        "evt_year" : "",
+        "evt_month" : "",
+        "evt_day" : ""
+      }
+    }
+  }
+]

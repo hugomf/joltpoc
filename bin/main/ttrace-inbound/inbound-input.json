@@ -35,8 +35,8 @@
                 "#text": "MEDUAL455824"
               },
               {
-                "-RefTypeCd": "CA",
-                "-SourceRefTypeCd": "128",
+                "RefTypeCd": "CA",
+                "SourceRefTypeCd": "128",
                 "#text": "WHATEVER"
               },
               {
@@ -46,30 +46,30 @@
               }
             ],
             "TradePartner": {
-              "-RoleCd": "CA",
+              "RoleCd": "CA",
               "TradePartnerName": "MSC MEDITERRANEAN SHIPPING COMPANY INC",
               "TradePartnerID": "MSCU"
             },
             "Status": {
               "Date": {
-                "-DateTypeCd": "X2",
-                "-TimeZone": "UTC",
-                "#text": "20200410 220000"
+                "DateTypeCd": "X2",
+                "TimeZone": "UTC",
+                "text": "20200410 220000"
               }
             },
             "Document": {
-              "-DocType": "SHIP",
-              "-Key": "0401303607",
-              "-AltKey": "130973538754",
+              "DocType": "SHIP",
+              "Key": "0401303607",
+              "AltKey": "130973538754",
               "DocumentID": "0401303607"
             },
             "Equipment": {
-              "-Key": "MSCU5854992",
+              "Key": "MSCU5854992",
               "EquipmentNumber": "MSCU5854992",
               "Reference": {
-                "-RefTypeCd": "SN",
-                "-SourceRefTypeCd": "128",
-                "#text": "FJ07971405"
+                "RefTypeCd": "SN",
+                "SourceRefTypeCd": "128",
+                "text": "FJ07971405"
               }
             }
           }

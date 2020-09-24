@@ -1,0 +1,37 @@
+[{
+    "operation": "shift",
+    "spec": {
+        "Envelope" : {
+            "Body" : {
+                "XMLBundle": {
+                    "XMLTransmission" : {
+                        "XMLGroup" : {
+                            "XMLTransaction" : {
+                                "BpMessage" : {
+                                    "Document" : {
+                                        "Order" : {
+                                            "LineItem" : {
+                                                "Attribute" : {
+                                                    "*" : {
+                                                        "@(0,AttributeTypeCd)" : {
+                                                            "PL" : {
+                                                                "@(2,\\$)": "Sizes.Items.value"
+                                                            },
+                                                            "SW" : {
+                                                                "@(2,\\$)": "Sizes.Items.stockCategoryCode"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}]
