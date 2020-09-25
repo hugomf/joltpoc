@@ -33,7 +33,7 @@ public class Json2XmlSample {
       JSONObject json = new JSONObject(source);
       String xml = "<?xml version=\"1.0\" encoding=\"ISO-8859-15\"?>\n"  + XML.toString(json);
       System.out.println(xml);
-   }
+   }  
 
 
    public String getPrettyString(String xmlData, int indent) throws Exception {

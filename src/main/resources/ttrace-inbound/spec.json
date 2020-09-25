@@ -169,13 +169,21 @@
           "rct_year" : "=substring(@(1,recordOnCreateDate),0,4)",
           "rct_month" : "=substring(@(1,recordOnCreateDate),4,6)",
           "rct_day" : "=substring(@(1,recordOnCreateDate),6,8)",
-          "recordOnCreateDate": "=concat(@(1,rct_year), '-', @(1,rct_month), '-', @(1,rct_day))"
+          "rct_hour" : "=substring(@(1,recordOnCreateTime),0,2)",
+          "rct_minute" : "=substring(@(1,recordOnCreateTime),2,4)",
+          "rct_sec" : "=substring(@(1,recordOnCreateTime),4,6)",
+          "recordOnCreateDate": "=concat(@(1,rct_year), '-', @(1,rct_month), '-', @(1,rct_day))",
+          "recordOnCreateTime": "=concat(@(1,rct_hour), ':', @(1,rct_minute), ':', @(1,rct_sec))"
       },
       "ShipmentTrackTraceEvent" : {
         "evt_year" : "=substring(@(1,eventTypeDt),0,4)",
         "evt_month" : "=substring(@(1,eventTypeDt),4,6)",
         "evt_day" : "=substring(@(1,eventTypeDt),6,8)",
-        "eventTypeDt": "=concat(@(1,evt_year), '-', @(1,evt_month), '-', @(1,evt_day))"
+        "evt_hour" : "=substring(@(1,eventTypeTm),0,2)",
+        "evt_minute" : "=substring(@(1,eventTypeTm),2,4)",
+        "evt_sec" : "=substring(@(1,eventTypeTm),4,6)",
+        "eventTypeDt": "=concat(@(1,evt_year), '-', @(1,evt_month), '-', @(1,evt_day))",
+        "eventTypeTm": "=concat(@(1,evt_hour), ':', @(1,evt_minute), ':', @(1,evt_sec))"
       }
     }
   },
@@ -194,12 +202,18 @@
       "eventControl": {
         "rct_year" : "",
         "rct_month" : "",
-        "rct_day" : ""
+        "rct_day" : "",
+        "rct_hour" : "",
+        "rct_minute" : "",
+        "rct_sec" : ""
       },
       "ShipmentTrackTraceEvent" : {
         "evt_year" : "",
         "evt_month" : "",
-        "evt_day" : ""
+        "evt_day" : "",
+        "evt_hour" : "",
+        "evt_minute" : "",
+        "evt_sec" : ""
       }
     }
   }

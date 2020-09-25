@@ -1,0 +1,23 @@
+/XMLBundle/XMLTransmission[@SourceOwner="FMXCLNT110"] | /XMLBundle/XMLTransmission[@SourceOwner="FHDCLNT110"]
+or //Reference[@RefTypeCd="4C"][contains(text(), 'TW') or contains(text(), 'HK') or contains(text(), 'CN')]
+
+
+/XMLBundle/XMLTransmission[@SourceOwner="FMXCLNT110"] | /XMLBundle/XMLTransmission[@SourceOwner="FHDCLNT110"] | 
+
+(not(boolean(/XMLBundle/XMLTransmission[@SourceOwner]/text())) and 
+/Reference[@RefTypeCd="4C"][contains(text(), 'TW') or contains(text(), 'HK') or contains(text(), 'CN')])
+
+
+
+
+//XMLBundle/XMLTransmission[@SourceOwner]/text()
+
+
+/XMLBundle/XMLTransmission[not(@SourceOwner)]
+
+boolean(/XMLBundle/XMLTransmission[not(@SourceOwner)] and 
+/Reference[@RefTypeCd="4C"][contains(text(), 'TW') or contains(text(), 'HK') or contains(text(), 'CN')]
+
+
+boolean(/XMLBundle/XMLTransmission[not(@SourceOwner)]) and 
+boolean(/BpMessage/Reference[@RefTypeCd="4C"][contains(text(), 'TW') or contains(text(), 'HK') or contains(text(), 'CN')])
