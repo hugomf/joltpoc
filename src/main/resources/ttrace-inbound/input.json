@@ -75,7 +75,8 @@
                                 "TradePartnerID": {
                                     "Qualifier": "93",
                                     "text": "ONEY"
-                                }
+                                },
+                                "TradePartnerName" : "hola"
                             },
                             {
                                 "RoleCd": "CB",
@@ -109,11 +110,11 @@
                                 "Place": {
                                     "City": "SHANGHAI",
                                     "StateProvinceCd": "SH",
-                                    "CountryCd": "CN"
-                                },
-                                "LocationID": {
-                                    "Qualifier": "UN",
-                                    "text": "CNSHA"
+                                    "CountryCd": "CN",
+                                    "LocationID": {
+                                        "Qualifier": "UN",
+                                        "text": "CNSHA"
+                                    }
                                 }
                             }
                         },
