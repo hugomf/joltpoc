@@ -131,24 +131,39 @@
                   "*": {
                     "RoleCd": {
                       "CA": {
-                        "#CARRIER": "ShipmentTrackTrace.ShipmentVendor[&3].vendorCode",
-                        "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName"
+                        "#CARRIER": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
+                        "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
+                        "@(2,TradePartnerID)": {
+                          "text" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
+                        }
                       },
                       "FW": {
-                        "#AIR FREIGHT FORWARDER": "ShipmentTrackTrace.ShipmentVendor[&3].vendorCode",
-                        "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName"
+                        "#AIR FREIGHT FORWARDER": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
+                        "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
+                        "@(2,TradePartnerID)": {
+                          "text" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
+                        }
                       },
                       "CB": {
-                        "#CUSTOMS BROKER": "ShipmentTrackTrace.ShipmentVendor[&3].vendorCode",
-                        "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName"
+                        "#CUSTOMS BROKER": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
+                        "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
+                        "@(2,TradePartnerID)": {
+                          "text" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
+                        }
                       },
                       "CS": {
-                        "#MCC CONSOLIDATOR": "ShipmentTrackTrace.ShipmentVendor[&3].vendorCode",
-                        "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName"
+                        "#MCC CONSOLIDATOR": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
+                        "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
+                        "@(2,TradePartnerID)": {
+                          "text" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
+                        }
                       },
                       "DS": {
-                        "#DECONSOLIDATOR": "ShipmentTrackTrace.ShipmentVendor[&3].vendorCode",
-                        "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName"
+                        "#DECONSOLIDATOR": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
+                        "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
+                        "@(2,TradePartnerID)": {
+                          "text" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
+                        }
                       },
                       "ST": {
                         "@(2,TradePartnerID)": {
