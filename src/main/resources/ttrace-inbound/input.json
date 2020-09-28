@@ -110,11 +110,11 @@
                                 "Place": {
                                     "City": "SHANGHAI",
                                     "StateProvinceCd": "SH",
-                                    "CountryCd": "CN",
-                                    "LocationID": {
-                                        "Qualifier": "UN",
-                                        "text": "CNSHA"
-                                    }
+                                    "CountryCd": "CN"
+                                },
+                                "LocationID": {
+                                    "Qualifier": "UN",
+                                    "text": "CNSHA"
                                 }
                             }
                         },
