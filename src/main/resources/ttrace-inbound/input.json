@@ -16,7 +16,7 @@
                     "TransactionType": "BPM-BST",
                     "BpMessage": {
                         "MessageType": "BST",
-                        "Mode": "VL",
+                        "Mode": "AF",
                         "Reference": [
                             {
                                 "RefTypeCd": "CN",

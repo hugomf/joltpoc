@@ -70,34 +70,38 @@
                       "DocumentID": "ShipmentTrackTrace.shipmentNbr"
                     },
                     "Mode": {
+                      "@": "ShipmentTrackTrace.shippingTypeCd",
                       "VL|O": {
-                        "$": "ShipmentTrackTrace.shippingTypeCd",
                         "@(2,Status)": {
-                          "StatusReasonCd": "ShipmentTrackTraceEvent.eventReasonCd"
+                          "Date": {
+                            "DateTypeCd": {
+                              "X4": {
+                                "#VA": "ShipmentTrackTraceEvent.eventTypeCd"
+                              },
+                              "X2": {
+                                "#AD": "ShipmentTrackTraceEvent.eventTypeCd"
+                              },
+                              "D1": {
+                                "#D": "ShipmentTrackTraceEvent.eventTypeCd"
+                              }
+                            }
+                          }
                         }
                       }
                     },
                     "Status" : {
                       "Date": {
-                        "DateTypeCd": {
-                          "X4": {
-                            "#VA": "ShipmentTrackTraceEvent.eventTypeCd"
-                          },
-                          "X2": {
-                            "#AD": "ShipmentTrackTraceEvent.eventTypeCd"
-                          },
-                          "D1": {
-                            "#D": "ShipmentTrackTraceEvent.eventTypeCd"
-                          },
-                          "*": {
-                            "$": "ShipmentTrackTraceEvent.eventTypeCd"
-                          }
-                        },
+                        "StatusReasonCd": "ShipmentTrackTraceEvent.eventReasonCd",
                         "TimeZone": "ShipmentTrackTraceEvent.eventTypeTimezoneCd",
                         "text": {
                           "* *": {
                             "$(0,1)": "ShipmentTrackTraceEvent.eventTypeDt",
                             "$(0,2)": "ShipmentTrackTraceEvent.eventTypeTm"
+                          }
+                        },
+                        "DateTypeCd" : {
+                          "*": {
+                            "$": "ShipmentTrackTraceEvent.eventTypeCd"
                           }
                         }
                       },
