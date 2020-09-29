@@ -2,6 +2,20 @@
       {
         "operation": "shift",
         "spec": {
+            "Envelope" : {
+              "Body" : {
+                "XML_Root" : {
+                  "XMLBundle" : {
+                    "@" : "&"
+                  }
+                }
+              }
+            }
+        }
+      },
+      {
+        "operation": "shift",
+        "spec": {
           "XMLBundle": {
             "XMLTransmission": {
               "SourceOwner": "eventControl.sourceSystemName",
@@ -19,49 +33,49 @@
                       "*": {
                         "RefTypeCd": {
                           "4C": {
-                            "@(2,text)": "eventControl.finalDestinationCountryCd"
+                            "@(2,\\$)": "eventControl.finalDestinationCountryCd"
                           },
                           "BM": {
-                            "@(2,text)": "ShipmentTrackTrace.billOfLadingNbr"
+                            "@(2,\\$)": "ShipmentTrackTrace.billOfLadingNbr"
                           },
                           "CN": {
-                            "@(2,text)": "ShipmentTrackTrace.hawbContainerProNbr"
+                            "@(2,\\$)": "ShipmentTrackTrace.hawbContainerProNbr"
                           },
                           "ST": {
-                            "@(2,text)": "ShipmentTrackTrace.shipToCustomerNbr"
+                            "@(2,\\$)": "ShipmentTrackTrace.shipToCustomerNbr"
                           },
                           "V3": {
-                            "@(2,text)": "ShipmentTrackTrace.voyageFlightNumber"
+                            "@(2,\\$)": "ShipmentTrackTrace.voyageFlightNumber"
                           },
                           "VS": {
-                            "@(2,text)": "ShipmentTrackTrace.vesselCode"
+                            "@(2,\\$)": "ShipmentTrackTrace.vesselCode"
                           },
                           "ABS": {
-                            "@(2,text)": "ShipmentTrackTrace.vesselName"
+                            "@(2,\\$)": "ShipmentTrackTrace.vesselName"
                           },
                           "AW": {
-                            "@(2,text)": "ShipmentTrackTrace.houseAirWaybill"
+                            "@(2,\\$)": "ShipmentTrackTrace.houseAirWaybill"
                           },
                           "MB": {
-                            "@(2,text)": "ShipmentTrackTrace.masterWaybill"
+                            "@(2,\\$)": "ShipmentTrackTrace.masterWaybill"
                           },
                           "KK": {
-                            "@(2,text)": "ShipmentTrackTrace.deliveryReferenceNumber"
+                            "@(2,\\$)": "ShipmentTrackTrace.deliveryReferenceNumber"
                           },
                           "LU": {
-                            "@(2,text)": "ShipmentTrackTrace.locationNumber"
+                            "@(2,\\$)": "ShipmentTrackTrace.locationNumber"
                           },
                           "8N": {
-                            "@(2,text)": "ShipmentTrackTrace.receivingCompany"
+                            "@(2,\\$)": "ShipmentTrackTrace.receivingCompany"
                           },
                           "4B": {
-                            "@(2,text)": "ShipmentTrackTrace.shipmentOriginCountryCode"
+                            "@(2,\\$)": "ShipmentTrackTrace.shipmentOriginCountryCode"
                           },
                           "LO": {
-                            "@(2,text)": "ShipmentTrackTrace.deconsolidationLoadNumber"
+                            "@(2,\\$)": "ShipmentTrackTrace.deconsolidationLoadNumber"
                           },
                           "PLN": {
-                            "@(2,text)": "ShipmentTrackTrace.deconsolidationPalletCount"
+                            "@(2,\\$)": "ShipmentTrackTrace.deconsolidationPalletCount"
                           }
                         }
                       }
@@ -93,7 +107,7 @@
                       "Date": {
                         "StatusReasonCd": "ShipmentTrackTraceEvent.eventReasonCd",
                         "TimeZone": "ShipmentTrackTraceEvent.eventTypeTimezoneCd",
-                        "text": {
+                        "\\$": {
                           "* *": {
                             "$(0,1)": "ShipmentTrackTraceEvent.eventTypeDt",
                             "$(0,2)": "ShipmentTrackTraceEvent.eventTypeTm"
@@ -115,7 +129,7 @@
                             "Qualifier": {
                               "UN": {
                                 "#U": "ShipmentPortDetail.portLocationTypeCode",
-                                "@(2,text)": "ShipmentPortDetail.portLocationCode"
+                                "@(2,\\$)": "ShipmentPortDetail.portLocationCode"
                               }
                             }
                           }
@@ -126,7 +140,7 @@
                       "Reference": {
                         "RefTypeCd": {
                           "SN": {
-                            "@(2,text)": "ShipmentTrackTrace.sealNbr"
+                            "@(2,\\$)": "ShipmentTrackTrace.sealNbr"
                           }
                         }
                       }
@@ -136,42 +150,42 @@
                         "RoleCd": {
                           "ST": {
                             "@(2,TradePartnerID)": {
-                              "text": "ShipmentTrackTrace.shipToCustomerNbr"
+                              "\\$": "ShipmentTrackTrace.shipToCustomerNbr"
                             }
                           },
                           "CA": {
                             "#CARRIER": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
                             "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
                             "@(2,TradePartnerID)": {
-                              "text" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
+                              "\\$" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
                             }
                           },
                           "FW": {
                             "#AIR FREIGHT FORWARDER": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
                             "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
                             "@(2,TradePartnerID)": {
-                              "text" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
+                              "\\$" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
                             }
                           },
                           "CB": {
                             "#CUSTOMS BROKER": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
                             "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
                             "@(2,TradePartnerID)": {
-                              "text" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
+                              "\\$" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
                             }
                           },
                           "CS": {
                             "#MCC CONSOLIDATOR": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
                             "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
                             "@(2,TradePartnerID)": {
-                              "text" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
+                              "\\$" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
                             }
                           },
                           "DS": {
                             "#DECONSOLIDATOR": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
                             "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
                             "@(2,TradePartnerID)": {
-                              "text" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
+                              "\\$" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
                             }
                           }
                         }
