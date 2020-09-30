@@ -97,11 +97,23 @@
                               },
                               "D1": {
                                 "#D": "ShipmentTrackTraceEvent.eventTypeCd"
+                              },
+                              "*" : {
+                                "@1": "ShipmentTrackTraceEvent.eventTypeCd"
                               }
                             }
                           }
                         }
-                      }
+                      },
+                       "*" : {
+                        "@(2,Status)": {
+                          "Date": {
+                            "DateTypeCd": {
+                              "@": "ShipmentTrackTraceEvent.eventTypeCd"
+                            }
+                          }
+                        }
+                       }
                     },
                     "Status" : {
                       "Date": {
@@ -112,24 +124,19 @@
                             "$(0,1)": "ShipmentTrackTraceEvent.eventTypeDt",
                             "$(0,2)": "ShipmentTrackTraceEvent.eventTypeTm"
                           }
-                        },
-                        "DateTypeCd" : {
-                          "*": {
-                            "$": "ShipmentTrackTraceEvent.eventTypeCd"
-                          }
                         }
                       },
                       "Location": {
                         "Place": {
-                          "City": "ShipmentPortDetail.portCityCode",
-                          "StateProvinceCd": "ShipmentPortDetail.portStateProvinceCode",
-                          "CountryCd": "ShipmentPortDetail.portCountryCode"
+                          "City": "ShipmentLocationDetail.locationCityName",
+                          "StateProvinceCd": "ShipmentLocationDetail.locationStateProvinceCode",
+                          "CountryCd": "ShipmentLocationDetail.locationCountryCode"
                         },
                         "LocationID": {
                             "Qualifier": {
                               "UN": {
-                                "#U": "ShipmentPortDetail.portLocationTypeCode",
-                                "@(2,\\$)": "ShipmentPortDetail.portLocationCode"
+                                "#U": "ShipmentLocationDetail.locationTypeCode",
+                                "@(2,\\$)": "ShipmentLocationDetail.locationCode"
                               }
                             }
                           }
