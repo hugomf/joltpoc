@@ -128,15 +128,15 @@
                       },
                       "Location": {
                         "Place": {
-                          "City": "ShipmentLocationDetail.locationCityName",
-                          "StateProvinceCd": "ShipmentLocationDetail.locationStateProvinceCode",
-                          "CountryCd": "ShipmentLocationDetail.locationCountryCode"
+                          "City": "ShipmentTrackTraceEvent.ShipmentLocationDetail.locationCityName",
+                          "StateProvinceCd": "ShipmentTrackTraceEvent.ShipmentLocationDetail.locationStateProvinceCode",
+                          "CountryCd": "ShipmentTrackTraceEvent.ShipmentLocationDetail.locationCountryCode"
                         },
                         "LocationID": {
                             "Qualifier": {
                               "UN": {
-                                "#U": "ShipmentLocationDetail.locationTypeCode",
-                                "@(2,\\$)": "ShipmentLocationDetail.locationCode"
+                                "#U": "ShipmentTrackTraceEvent.ShipmentLocationDetail.locationTypeCode",
+                                "@(2,\\$)": "ShipmentTrackTraceEvent.ShipmentLocationDetail.locationCode"
                               }
                             }
                           }
