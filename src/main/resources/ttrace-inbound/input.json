@@ -109,21 +109,24 @@
                                             "TradePartnerID": {
                                                 "Qualifier": 93,
                                                 "$": "ONEY"
-                                            }
+                                            },
+                                            "TradePartnerName" : "Trade Parner lcc"
                                         },
                                         {
                                             "RoleCd": "FW",
                                             "TradePartnerID": {
                                                 "Qualifier": 93,
                                                 "$": "ONEY"
-                                            }
+                                            },
+                                            "TradePartnerName" : "Trade Parner Corp"
                                         },
                                         {
                                             "RoleCd": "DS",
                                             "TradePartnerID": {
                                                 "Qualifier": 93,
                                                 "$": "CEVA"
-                                            }
+                                            },
+                                            "TradePartnerName" : "Trade Parner ltd"
                                         },
                                         {
                                             "RoleCd": "CB",

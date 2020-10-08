@@ -33,16 +33,16 @@
                       "*": {
                         "RefTypeCd": {
                           "4C": {
-                            "@(2,\\$)": "eventControl.finalDestinationCountryCd"
+                            "@(2,\\$)": "eventControl.finalDestinationCountryCode"
                           },
                           "BM": {
-                            "@(2,\\$)": "ShipmentTrackTrace.billOfLadingNbr"
+                            "@(2,\\$)": "ShipmentTrackTrace.billOfLadingNumber"
                           },
                           "CN": {
-                            "@(2,\\$)": "ShipmentTrackTrace.hawbContainerProNbr"
+                            "@(2,\\$)": "ShipmentTrackTrace.hawbContainerProNumber"
                           },
                           "ST": {
-                            "@(2,\\$)": "ShipmentTrackTrace.shipToCustomerNbr"
+                            "@(2,\\$)": "ShipmentTrackTrace.shipToCustomerNumber"
                           },
                           "V3": {
                             "@(2,\\$)": "ShipmentTrackTrace.voyageFlightNumber"
@@ -54,13 +54,13 @@
                             "@(2,\\$)": "ShipmentTrackTrace.vesselName"
                           },
                           "AW": {
-                            "@(2,\\$)": "ShipmentTrackTrace.houseAirWaybill"
+                            "@(2,\\$)": "ShipmentTrackTrace.houseAirWaybillNumber"
                           },
                           "MB": {
-                            "@(2,\\$)": "ShipmentTrackTrace.masterWaybill"
+                            "@(2,\\$)": "ShipmentTrackTrace.masterAirWaybillNumber"
                           },
                           "KK": {
-                            "@(2,\\$)": "ShipmentTrackTrace.deliveryReferenceNumber"
+                            "@(2,\\$)": "ShipmentTrackTrace.deliveryReferenceText"
                           },
                           "LU": {
                             "@(2,\\$)": "ShipmentTrackTrace.locationNumber"
@@ -76,30 +76,33 @@
                           },
                           "PLN": {
                             "@(2,\\$)": "ShipmentTrackTrace.deconsolidationPalletCount"
+                          },
+                          "BN": {
+                            "@(2,\\$)": "ShipmentTrackTrace.carrierBookingNumber"
                           }
                         }
                       }
                     },
                     "Document": {
-                      "DocumentID": "ShipmentTrackTrace.shipmentNbr"
+                      "DocumentID": "ShipmentTrackTrace.shipmentNumber"
                     },
                     "Mode": {
-                      "@": "ShipmentTrackTrace.shippingTypeCd",
+                      "@": "ShipmentTrackTrace.shippingTypeCodes",
                       "VL|O": {
                         "@(2,Status)": {
                           "Date": {
                             "DateTypeCd": {
                               "X4": {
-                                "#VA": "ShipmentTrackTraceEvent.eventTypeCd"
+                                "#VA": "ShipmentTrackTraceEvent.eventTypeCode"
                               },
                               "X2": {
-                                "#AD": "ShipmentTrackTraceEvent.eventTypeCd"
+                                "#AD": "ShipmentTrackTraceEvent.eventTypeCode"
                               },
                               "D1": {
-                                "#D": "ShipmentTrackTraceEvent.eventTypeCd"
+                                "#D": "ShipmentTrackTraceEvent.eventTypeCode"
                               },
                               "*" : {
-                                "@1": "ShipmentTrackTraceEvent.eventTypeCd"
+                                "@1": "ShipmentTrackTraceEvent.eventTypeCode"
                               }
                             }
                           }
@@ -109,7 +112,7 @@
                         "@(2,Status)": {
                           "Date": {
                             "DateTypeCd": {
-                              "@": "ShipmentTrackTraceEvent.eventTypeCd"
+                              "@": "ShipmentTrackTraceEvent.eventTypeCode"
                             }
                           }
                         }
@@ -117,12 +120,12 @@
                     },
                     "Status" : {
                       "Date": {
-                        "StatusReasonCd": "ShipmentTrackTraceEvent.eventReasonCd",
-                        "TimeZone": "ShipmentTrackTraceEvent.eventTypeTimezoneCd",
+                        "StatusReasonCd": "ShipmentTrackTraceEvent.eventReasonCode",
+                        "TimeZone": "ShipmentTrackTraceEvent.eventTypeTimezoneCode",
                         "\\$": {
                           "* *": {
-                            "$(0,1)": "ShipmentTrackTraceEvent.eventTypeDt",
-                            "$(0,2)": "ShipmentTrackTraceEvent.eventTypeTm"
+                            "$(0,1)": "ShipmentTrackTraceEvent.eventTypeDate",
+                            "$(0,2)": "ShipmentTrackTraceEvent.eventTypeTime"
                           }
                         }
                       },
@@ -143,11 +146,11 @@
                       }
                     },
                     "Equipment": {
-                      "EquipmentNumber": "ShipmentTrackTrace.containerNbr",
+                      "EquipmentNumber": "ShipmentTrackTrace.containerNumber",
                       "Reference": {
                         "RefTypeCd": {
                           "SN": {
-                            "@(2,\\$)": "ShipmentTrackTrace.sealNbr"
+                            "@(2,\\$)": "ShipmentTrackTrace.sealNumber"
                           }
                         }
                       }
@@ -168,21 +171,21 @@
                             }
                           },
                           "FW": {
-                            "#AIR FREIGHT FORWARDER": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
+                            "#FORWARDER": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
                             "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
                             "@(2,TradePartnerID)": {
                               "\\$" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
                             }
                           },
                           "CB": {
-                            "#CUSTOMS BROKER": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
+                            "#BROKER": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
                             "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
                             "@(2,TradePartnerID)": {
                               "\\$" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
                             }
                           },
                           "CS": {
-                            "#MCC CONSOLIDATOR": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
+                            "#CONSOLIDATOR": "ShipmentTrackTrace.ShipmentVendor[&3].vendorTypeCode",
                             "@(2,TradePartnerName)": "ShipmentTrackTrace.ShipmentVendor[&3].vendorName",
                             "@(2,TradePartnerID)": {
                               "\\$" : "ShipmentTrackTrace.ShipmentVendor[&4].vendorCode"
@@ -219,14 +222,14 @@
             "recordCreatedOnTime": "=concat(@(1,rct_hour), ':', @(1,rct_minute), ':', @(1,rct_sec))"
           },
           "ShipmentTrackTraceEvent": {
-            "evt_year": "=substring(@(1,eventTypeDt),0,4)",
-            "evt_month": "=substring(@(1,eventTypeDt),4,6)",
-            "evt_day": "=substring(@(1,eventTypeDt),6,8)",
-            "evt_hour": "=substring(@(1,eventTypeTm),0,2)",
-            "evt_minute": "=substring(@(1,eventTypeTm),2,4)",
-            "evt_sec": "=substring(@(1,eventTypeTm),4,6)",
-            "eventTypeDt": "=concat(@(1,evt_year), '-', @(1,evt_month), '-', @(1,evt_day))",
-            "eventTypeTm": "=concat(@(1,evt_hour), ':', @(1,evt_minute), ':', @(1,evt_sec))"
+            "evt_year": "=substring(@(1,eventTypeDate),0,4)",
+            "evt_month": "=substring(@(1,eventTypeDate),4,6)",
+            "evt_day": "=substring(@(1,eventTypeDate),6,8)",
+            "evt_hour": "=substring(@(1,eventTypeTime),0,2)",
+            "evt_minute": "=substring(@(1,eventTypeTime),2,4)",
+            "evt_sec": "=substring(@(1,eventTypeTime),4,6)",
+            "eventTypeDate": "=concat(@(1,evt_year), '-', @(1,evt_month), '-', @(1,evt_day))",
+            "eventTypeTime": "=concat(@(1,evt_hour), ':', @(1,evt_minute), ':', @(1,evt_sec))"
           }
         }
       },
@@ -234,7 +237,7 @@
         "operation": "modify-default-beta",
         "spec": {
           "ShipmentTrackTraceEvent": {
-            "eventTypeTimezoneCd": "LT"
+            "eventTypeTimezoneCode": "LT"
           }
         }
       },
