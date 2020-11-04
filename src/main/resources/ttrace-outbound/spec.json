@@ -1,106 +1,167 @@
-[
-    {
-        "operation": "modify-default-beta",
-        "spec": {
-            "eventControl": {
-               "Timestamp": "=concat(@(1,recordCreatedOnDate),' ', @(1,recordCreatedOnTime))"
-            },
-            "shipmentTrackTrace" : {
-                "shipmentTrackTraceEvent" : {
-                    "*" : {
-                        "\\_Timestamp": "=concat(@(1,eventTypeDt),' ', @(1,eventTypeTm))"
-                    }
-                }
-            }
+[{
+    "operation": "modify-default-beta",
+    "spec": {
+        "eventControl": {
+            "Timestamp": "=concat(@(1,recordCreatedOnDate),' ', @(1,recordCreatedOnTime))",
+            "messageIdentifier1": "=substring(@(1,messageIdentifier), 0, 30)"
         }
-    },
-    {
-        "operation": "shift",
-        "spec": {
-            "eventControl":  {
-                "messageIdentifier" : ["XMLBundle.XMLTransmission.CtrNumber", "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.CtrlNumber"],
-                "#FMXCLNT110" : "XMLBundle.XMLTransmission.SourceOwner",
-                "Timestamp": "XMLBundle.XMLTransmission.Timestamp"
+    }
+},
+{
+    "operation": "shift",
+    "spec": {
+        "eventControl": {
+            "messageIdentifier1": [
+                "XMLBundle.XMLTransmission.-CtrlNumber",
+                "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.-CtrlNumber"
+            ],
+            "sourceSystemName": "XMLBundle.XMLTransmission.-SourceOwner",
+            "Timestamp": "XMLBundle.XMLTransmission.-Timestamp"
+        },
+        "shipmentTrackTrace": {
+            "shippingTypeCode": {
+                "": null,
+                " ": null,
+                "null": null,
+                "*": {
+                    "$": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[].Mode"
+                }
             },
-            "shipmentTrackTrace" : {
-                "shipmentNbr" : ["XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Document.Key", "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Document.DocumentID"],
-                "shippingTypeCd" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Mode",
-                "hawbContainerProNbr": {
-                    "#CN" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Reference[0].RefTypeCd",
-                    "#128" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Reference[0].SourceRefTypeCd",
-                    "@" : ["XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Reference[0].text","XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Equipment.Key","XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Equipment.EquimentNumber"]
-                },
-                "billOfLadingNbr" : {
-                    "#BM" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Reference[1].RefTypeCd",
-                    "#128" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Reference[1].SourceRefTypeCd",
-                    "@" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Reference[1].text"
-                },
-                "sealNbr" : {
-                    "#SN" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Reference[2].RefTypeCd",
-                    "#128" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Reference[2].SourceRefTypeCd",
-                    "@" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Reference[2].text"
-                },
-                "carrierCd" : {
-                    "*" : {
-                        "@1" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.TradePartner.TradePartnerID",
-                        "@2" : {
-                            "shipmentAddress" : {
-                                "*" : {
-                                    "addressPartnerNm" : {
-                                        "&4" : {
-                                            "@2" : {
-                                                "addressPartnerNm" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.TradePartner.TradePartnerName"
-                                            }
-                                        }
-                                    }    
+            "shipmentNumber": [
+                "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#].Document.-Key",
+                "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#].Document.DocumentID.\\#text"
+            ],
+            "hawbContainerProNumber": {
+                "": null,
+                " ": null,
+                "null": null,
+                "*": {
+                    "#CN": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Reference[0].-RefTypeCd",
+                    "#128": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Reference[0].-SourceRefTypeCd",
+                    "$": [
+                        "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Reference[0].\\#text",
+                        "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Equipment.-Key",
+                        "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Equipment.EquimentNumber"
+                    ]
+                }
+            },
+            "billOfLadingNumber": {
+                "": null,
+                " ": null,
+                "null": null,
+                "#BM": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Reference[1].-RefTypeCd",
+                "#128": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Reference[1].-SourceRefTypeCd",
+                "@": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Reference[1].\\#text"
+            },
+            "sealNumber": {
+                "#SN": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Equipment.Reference.-RefTypeCd",
+                "#128": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Equipment.Reference.-SourceRefTypeCd",
+                "@": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Equipment.Reference.\\#text"
+            },
+            "shipmentVendor": {
+                "*": {
+                    "vendorTypeCode": {
+                        "CARRIER": {
+                            "#CA": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].TradePartner[].-RoleCd",
+                            "@(2,vendorName)": {
+                                "": null,
+                                " ": null,
+                                "null": null,
+                                "*": {
+                                    "$": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].TradePartner[#1].TradePartnerName"
+                                }
+                            },
+                            "@(2,vendorCode)": {
+                                "": null,
+                                " ": null,
+                                "null": null,
+                                "*": {
+                                    "$": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].TradePartner[#1].TradePartnerID"
                                 }
                             }
                         }
+                    }
+                }
+            },
+            "shipmentTrackTraceEvent": {
+                "*": {
+                    "eventTypeCode": {
+                        "": null,
+                        " ": null,
+                        "null": null,
+                        "*": {
+                            "$": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Status[#1].Date.-DateTypeCd"
+                        }
                     },
-                    "#CA" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.TradePartner.RoleCd"
-                },
-                "shipmentTrackTraceEvent" : {
-                    "0" : { //verify
-                        "eventReasonCd" :"XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Status.StatusReasonCd",
-                        "shipmentPortDetail" : {
-                            "0" : {
-                                "portStatusDetailCd" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Location.LocTypeCd",
-                                "portLocationTypeCd" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Place.Qualifier",
-                                "portLocationCd" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Place.LocationID",
-                                "portCountryCd" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Place.CountryCd"    
+                    "eventTypeDate": {
+                        "": {
+                            "@(6,eventControl)": {
+                                "messageActionCode": {
+                                    "04": {
+                                        "#99990101": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Status[#1].Date.text1"
+                                    }
+                                }
                             }
                         },
-                        "eventTypeCd" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Status.Date.DateTypeCd", //verify logic
-                        "eventTypeTimezoneCd" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Status.Date.Timezone", //verify logic
-                        "\\_Timestamp" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Status.Date.text"
-                    }
-                },
-                "shipmentText" : {
-                    "0" : { //verify
-                        "textId" : "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BPMessage.Document.AltKey"
-                    }                    
-                }
-            }
-        }
-    },
-    {
-        "operation": "default",
-        "spec": {
-            "XMLBundle": {
-                "GeneratedBy": "NIKE",
-                "XMLTransmission": {
-                    "Sender" : "NIKE",
-                    "Receiver": "NKTRADET",
-                    "XMLGroup": {
-                        "CtrlNumber": "01",
-                        "GroupType ": "BP",
-                        "IncludedMessages": "1",
-                        "XMLTransaction" : {
-                            "TransactionType": "BPM-BST",
-                            "BPMessage" : {
-                                "MessageType" : "BST",
-                                "Document" : {
-                                    "DocType"  : "SHIP"
+                        " ": {
+                            "@(6,eventControl)": {
+                                "messageActionCode": {
+                                    "04": {
+                                        "#99990101": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Status[#1].Date.text1"
+                                    }
+                                }
+                            }
+                        },
+                        "null": {
+                            "@(6,eventControl)": {
+                                "messageActionCode": {
+                                    "04": {
+                                        "#99990101": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Status[#1].Date.text1"
+                                    }
+                                }
+                            }
+                        },
+                        "*": {
+                            "$": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Status[#1].Date.text1"
+                        }
+                    },
+                    "eventTypeTime": {
+                        "": null,
+                        " ": null,
+                        "null": null,
+                        "*": {
+                            "$": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Status[#1].Date.text2"
+                        }
+                    },
+                    "eventTypeTimezoneCode": {
+                        "": null,
+                        " ": null,
+                        "null": null,
+                        "*": {
+                            "$": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Status[#1].Date.-Timezone"
+                        }
+                    },
+                    "eventReasonCode": {
+                        "": null,
+                        " ": null,
+                        "null": null,
+                        "*": {
+                            "$": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Status[#1].StatusReasonCd.\\#text"
+                        }
+                    },
+                    "shipmentLocationDetail": {
+                        "*": {
+                            "locationStatusDetailCode": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Status[#].Location.LocTypeCd",
+                            "locationTypeCode": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#].Status[#].Location.Place.Qualifier",
+                            "locationCode": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#].Status[#].Location.Place.LocationID",
+                            "locationCountryCode": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#].Status[#].Location.Place.CountryCd"
+                        }
+                    },
+                    "shipmentEventText": {
+                        "*": {
+                            "shipmentDataText": {
+                                "ZAMBERRDKEY": {
+                                    "$": "XMLBundle.XMLTransmission.XMLGroup.XMLTransaction.BpMessage[#1].Document.-AltKey"
                                 }
                             }
                         }
@@ -109,5 +170,82 @@
             }
         }
     }
-
+},
+{
+    "operation": "modify-overwrite-beta",
+    "spec": {
+        "XMLBundle": {
+            "XMLTransmission": {
+                "XMLGroup": {
+                    "XMLTransaction": {
+                        "BpMessage": {
+                            "*": {
+                                "Status": {
+                                    "*": {
+                                        "Date": {
+                                            "\\#text": "=concat(@(1,text1),' ', @(1,text2))"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+},
+{
+    "operation": "remove",
+    "spec": {
+        "XMLBundle": {
+            "XMLTransmission": {
+                "XMLGroup": {
+                    "XMLTransaction": {
+                        "BpMessage": {
+                            "*": {
+                                "Status": {
+                                    "*": {
+                                        "Date": {
+                                            "text2": "",
+                                            "text1": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+},
+{
+    "operation": "default",
+    "spec": {
+        "XMLBundle": {
+            "-GeneratedBy": "NKE",
+            "XMLTransmission": {
+                "-Sender": "NIKE",
+                "-Receiver": "NKETRADET",
+                "XMLGroup": {
+                    "-CtrlNumber": "001",
+                    "-GroupType": "BP",
+                    "-IncludedMessages": "1",
+                    "XMLTransaction": {
+                        "-TransactionType": "BPM-BST",
+                        "BpMessage[]": {
+                            "*": {
+                                "-MessageType": "BST",
+                                "Document": {
+                                    "-DocTypeCd": "SHIP"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 ]

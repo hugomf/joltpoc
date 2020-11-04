@@ -1,147 +1,118 @@
 {
-    "resourceType": "domain/trackAndTraceMaster",
-    "links": {
-      "self": "domain/trackAndTraceMaster/v1/1d9c74ff-3643-494a-a898-ec6cca7368f3"
+  "eventControl": {
+    "messageActionCode": "00",
+    "messageIdentifier": "1234567890",
+    "sourceSystemName": "06",
+    "recordCreatedOnDate": "2020-10-05",
+    "recordCreatedOnTime": "12:03:45.001",
+    "recordCreatedTimeZoneCode": "PST",
+    "distributionCenterShipmentTypeIndicator": "0",
+    "directShipShipmentTypeIndicator": "0",
+    "subcontractShipmentTypeIndicator": "0",
+    "retailShipmentTypeIndicator": "0",
+    "nikeIdShipmentTypeIndicator": "0",
+    "shipmentStatusCode": "7",
+    "distributionCenterCode": "1047",
+    "distibutionCenterCountryCd": "GB",
+    "shippingPointCode": "1064",
+    "inboundShipmentIndicator": "X",
+    "outboundShipmentIndicator": "1",
+    "finalDestinationCountryCode": "GB"
+  },
+  "shipmentTrackTrace": {
+    "billOfLadingNumber": "KKLUHPH911612",
+    "hawbContainerProNumber": "69535653855",
+    "trailerIdNumber": "ROB103",
+    "shipToCustomerNumber": "3673",
+    "trackingNumber": "445893918414",
+    "sealNumber": "0055312",
+    "shipmentNumber": "0051713316",
+    "shippingTypeCode": "VL",
+    "shippingTypeDescription": "Air Freight",
+    "shipReferenceNumber": "SG",
+    "shipmentSignerName": "John Quentin Smith",
+    "statusLocationCode": "xxxxxxx",
+    "containerOwnerCode": "CSQ",
+    "shipmentLoadTypeCode": "1",
+    "containerTypeCode": "4500",
+    "containerNumber": "CSQU3054383",
+    "transportationPlanningPointCode": "Z005",
+    "carrierBookingNumber": "xxxxx",
+    "voyageFlightNumber": "315/214",
+    "vesselCode": "9463279",
+    "vesselName": "ALMURAYKH",
+    "houseAirWaybillNumber": "xxxxx",
+    "masterAirWaybillNumber": "xxxxx",
+    "deliveryReferenceText": "xxxxx",
+    "locationNumber": "xxxxx",
+    "receivingCompany": "xxxxx",
+    "shipmentOriginCountryCode": "VN",
+    "deconsolidationLoadNumber": [
+      "One",
+      "Two"
+    ],
+    "deconsolidationPalletCount": 230,
+    "shipmentText": [
+      {
+        "textIdentifier": "xxxxx",
+        "languageCode": "EN",
+        "dataText": "xxxxx"
+      }
+    ],
+    "shipmentLadingException": {
+      "ladingExceptionCode": "0",
+      "exceptionPackagingFormCode": "BLK",
+      "exceptionQuantity": "BLK",
+      "unitOfMeasureCode": "PR"
     },
-    "eventControl": {
-      "messageActionCode": "02",
-      "sourceSystemName": null,
-      "recordCreatedOnDate": "2020-10-05",
-      "recordCreatedOnTime": "12:03:45.001",
-      "messageIdentifier": null,
-      "distributionCenterShipmentTypeInd": "1",
-      "directShipShipmentTypeInd": "0",
-      "subcontractShipmentTypeInd": "1",
-      "retailShipmentTypeInd": "0",
-      "nikeIDShipmentTypeInd": "1",
-      "shipmentStatusCd": "7",
-      "distributionCenterCd": "1047",
-      "distibutionCenterCountryCd": "GB",
-      "shippingPointCd": "1064",
-      "inboundShipmentInd": "1",
-      "outboundShipmentInd": "1",
-      "finalDestinationCountryCd": "GB"
-    },
-    "shipmentTrackTrace": {
-      "billOfLadingNbr": "KKLUHPH911612",
-      "hawbContainerProNbr": "69535653855",
-      "trailerIdNbr": "ROB103",
-      "shipToCustomerNbr": "1012335286",
-      "forwarderCd": "1032355654",
-      "carrierCd": "EXLA",
-      "trackingNbr": "445893918414",
-      "sealNbr": "0055312",
-      "shipmentNbr": "0051713316",
-      "shippingTypeCd": "VL",
-      "shippingTypeDesc": "Ocean Vessel",
-      "shipReferenceNbr": null,
-      "shipmentSignerNm": "John Quentin Smith",
-      "statusLocationCd": null,
-      "containerOwnerCd": "CSQ",
-      "shipmentLoadTypeCd": "3",
-      "containerTypeCd": "4500",
-      "containerNbr": "CSQU3054383",
-      "transportationPlanningPointCd": "Z005",
-      "shipmentText": [
-        {
-          "textId": " ",
-          "languageCd": "EN",
-          "dataTxt": null
-        }
-      ],
-      "shipmentAddress": [
-        {
-          "languageCd": "EN",
-          "addressTypeCd": "SHIP-TO",
-          "addressTypeDesc": "CARRIER",
-          "addressPartnerNm": "EXLA",
-          "address1Nm": "KOHL'S DC 0855",
-          "address2Nm": "AVIARA RESORT",
-          "address3Nm": "SAN BERNARDINO DC 855",
-          "address4Nm": "TRANS ASIA SHOES CO., LTD Marketing",
-          "cityNm": "BERNARDINO",
-          "countryCd": "US",
-          "faxNbr": "800-671-6453",
-          "postalCd": "97005",
-          "provinceStateCd": "OR",
-          "streetAddressLine1Desc": "890 EAST MILL ST",
-          "streetAddressLine2Desc": "890 EAST MILL ST",
-          "streetAddressLine3Desc": "SAN BERNARDINO DC 855",
-          "streetAddressLine4Desc": "SAN BERNARDINO DC 855",
-          "streetAddressLine5Desc": "SAN BERNARDINO DC 855",
-          "emailAddressNm": "john.doe@abc.com",
-          "telephoneNbr": "800-671-6453",
-          "telephoneExtensionNbr": "2733",
-          "AddressUrl": "http://www.jcpenney.com",
-          "buildingNbr": null,
-          "floorNm": null,
-          "houseNbr": null,
-          "locationDesc": null,
-          "firstStreetNm": "502 King Street Royal Bank Plaza 19th Floor South Tower Vinh Cuu Town",
-          "dropOffLocationCd": "AP + GB99995"
-        },
-        {
-          "languageCd": "RUS",
-          "addressTypeCd": "SHIP-TO",
-          "addressTypeDesc": "CARRIER",
-          "addressPartnerNm": "RRIAS",
-          "address1Nm": "KOHL'S DC 0855",
-          "address2Nm": "AVIARA RESORT",
-          "address3Nm": "SAN BERNARDINO DC 855",
-          "address4Nm": "TRANS ASIA SHOES CO., LTD Marketing",
-          "cityNm": "BERNARDINO",
-          "countryCd": "US",
-          "faxNbr": "800-671-6453",
-          "postalCd": "97005",
-          "provinceStateCd": "OR",
-          "streetAddressLine1Desc": "890 EAST MILL ST",
-          "streetAddressLine2Desc": "890 EAST MILL ST",
-          "streetAddressLine3Desc": "SAN BERNARDINO DC 855",
-          "streetAddressLine4Desc": "SAN BERNARDINO DC 855",
-          "streetAddressLine5Desc": "SAN BERNARDINO DC 855",
-          "emailAddressNm": "john.doe@abc.com",
-          "telephoneNbr": "800-671-6453",
-          "telephoneExtensionNbr": "2733",
-          "AddressUrl": "http://www.jcpenney.com",
-          "buildingNbr": null,
-          "floorNm": null,
-          "houseNbr": null,
-          "locationDesc": null,
-          "firstStreetNm": "502 King Street Royal Bank Plaza 19th Floor South Tower Vinh Cuu Town",
-          "dropOffLocationCd": "AP + GB99995"
-        }
-      ],
-      "shipmentTrackTraceEvent": [
-        {
-          "eventTypeCd": null,
-          "eventTypeDesc": "AVAILABLE FOR DELIVERY",
-          "eventTypeCnt": "2",
-          "eventReasonCd": "NS",
-          "eventReasonText": null,
-          "eventReasonDesc": null,
-          "referenceEventTypeCd": null,
-          "eventTypeDt": "20201203",
-          "eventTypeTm": "120345",
-          "eventTypeTimezoneCd": "PST",
-          "shipmentPortDetail": [
-            {
-              "portStatusDetailCd": "L",
-              "portLocationTypeCd": "U",
-              "portLocationCd": "55224",
-              "portNm": "USQPO",
-              "portCountryCd": "UK",
-              "portDt": "20201203",
-              "portTm": "120345",
-              "portTimeZoneCd": "PST",
-              "portDateTypeCd": "139"
-            }
-          ],
-          "shipmentEventText": [
-            {
-              "shipmentDateTxt": null
-            }
-          ]
-        }
-      ]
-    }
+    "shipmentVendor": [
+      {
+        "vendorTypeCode": "CARRIER",
+        "vendorCode": "FWL10",
+        "vendorName": "Fowler Logistics Ltd.",
+        "vendorName2": "Fowler Logistics Ltd",
+        "addressLine1Text": "123 JaySt",
+        "addressLine2Text": "123 JaySt",
+        "addressLine3Text": "123 JaySt",
+        "addressLine4Text": "123 JaySt",
+        "cityName": "Portland",
+        "countryCode": "OR",
+        "zipCode": "97005",
+        "provinceStateRegionCode": "OR",
+        "emailAddressText": "abc.def@abc.com",
+        "phoneNumber": "800-671-6453",
+        "languageCode": "EN"
+      }
+    ],
+    "shipmentTrackTraceEvent": [
+      {
+        "eventTypeCode": "xxxxx",
+        "eventTypeDescription": "Estimated Delivery",
+        "eventTypeCounter": "2",
+        "eventReasonCode": "NS",
+        "eventReasonText": "NS",
+        "eventReasonDescription": "Shipment Status",
+        "referenceEventTypeCode": "xxxxx",
+        "eventTypeDate": "20201203",
+        "eventTypeTime": "120345",
+        "eventTypeTimezoneCode": "PST",
+        "shipmentLocationDetail": [
+          {
+            "locationStatusDetailCode": "L",
+            "locationTypeCode": "UN",
+            "locationCode": "55224",
+            "locationName": "USQPO",
+            "locationCityName": "Singapore",
+            "locationStateProvinceCode": "OR",
+            "locationCountryCode": "US"
+          }
+        ],
+        "shipmentEventText": [
+          {
+            "shipmentDataText": "xxxxx"
+          }
+        ]
+      }
+    ]
   }
+}
